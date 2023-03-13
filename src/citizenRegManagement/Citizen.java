@@ -18,4 +18,17 @@ public class Citizen {
       this.afm = afm;
       this.address = address;
    }
+
+   @Override
+   public String toString() {
+      return "Citizen{" +
+              "at='" + at + '\'' +
+              ", firstName='" + firstName + '\'' +
+              ", lastName='" + lastName + '\'' +
+              ", age='" + age + '\'' +
+              ", born='" + born + '\'' +
+              ", afm='" + afm + '\'' +
+              ", address='" + address + '\'' +
+              '}';
+   }
 }
