@@ -9,5 +9,13 @@ public class Citizen {
    private String afm;
    private String address;
 
-
+   public Citizen(String at, String firstName, String lastName, String age, String born, String afm, String address) {
+      this.at = at;
+      this.firstName = firstName;
+      this.lastName = lastName;
+      this.age = age;
+      this.born = born;
+      this.afm = afm;
+      this.address = address;
+   }
 }
