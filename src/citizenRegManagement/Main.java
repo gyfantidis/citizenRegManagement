@@ -3,6 +3,8 @@ package citizenRegManagement;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+import static citizenRegManagement.Menu.addNewCitizen;
+
 public class Main {
     public static void main(String[] args) {
 
@@ -27,7 +29,8 @@ public class Main {
             System.out.println();
             switch (choice) {
                 case 1:
-                    System.out.println("epelekses 1");
+                    System.out.println("Add a Citizen into the Registry");
+                    addNewCitizen(input,registry);
                     break;
                 case 2:
                     System.out.println("epelekses 2");

@@ -19,6 +19,8 @@ public class Citizen {
       this.address = address;
    }
 
+
+
    @Override
    public String toString() {
       return "Citizen{" +
@@ -30,5 +32,61 @@ public class Citizen {
               ", afm='" + afm + '\'' +
               ", address='" + address + '\'' +
               '}';
+   }
+
+   public String getAt() {
+      return at;
+   }
+
+   public void setAt(String at) {
+      this.at = at;
+   }
+
+   public String getFirstName() {
+      return firstName;
+   }
+
+   public void setFirstName(String firstName) {
+      this.firstName = firstName;
+   }
+
+   public String getLastName() {
+      return lastName;
+   }
+
+   public void setLastName(String lastName) {
+      this.lastName = lastName;
+   }
+
+   public String getAge() {
+      return age;
+   }
+
+   public void setAge(String age) {
+      this.age = age;
+   }
+
+   public String getBorn() {
+      return born;
+   }
+
+   public void setBorn(String born) {
+      this.born = born;
+   }
+
+   public String getAfm() {
+      return afm;
+   }
+
+   public void setAfm(String afm) {
+      this.afm = afm;
+   }
+
+   public String getAddress() {
+      return address;
+   }
+
+   public void setAddress(String address) {
+      this.address = address;
    }
 }
