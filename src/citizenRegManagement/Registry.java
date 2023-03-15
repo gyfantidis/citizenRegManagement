@@ -11,6 +11,7 @@ public class Registry {
         this.name = name;
     }
 
+    //checking if the citizens IDNumber exist and if no adding the citizen
     public boolean addCitizen(Citizen cz){
         for (Citizen citizen: citizens){
             if (citizen.getAt().equals(cz.getAt())){

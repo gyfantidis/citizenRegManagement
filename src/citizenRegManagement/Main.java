@@ -8,18 +8,17 @@ import static citizenRegManagement.Menu.addNewCitizen;
 public class Main {
     public static void main(String[] args) {
 
-        Citizen citizen = new Citizen("123", "Giannis", "Yfantidis", "male", "10/3/1982", "123456789", "Pontoy 25");
-
-        System.out.println(citizen.toString());
-
+        //Creation the Citizens Registry
         Registry registry = new Registry("Citizens Registry");
+
+        //Start the menu
         System.out.println("MENU for Registry Management");
         int choice = 0;
         Scanner input = new Scanner(System.in);
         do {
-            System.out.println("choice1");
+            System.out.println("Add new Citizen into the Registry");
             System.out.println("Choice 2");
-            System.out.println("Choise 3");
+            System.out.println("Choice 3");
             System.out.println("choice 4");
             try {
                 choice = input.nextInt();

@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class Menu {
 
+    //method adding new citizen into the registry
     static void addNewCitizen(Scanner input, Registry registry) {
         System.out.println("ID number : ");
         String idNumber = input.next();
@@ -20,16 +21,18 @@ public class Menu {
         System.out.println("Address : ");
         String address = input.next();
 
-        Citizen citizen = new Citizen(idNumber,fName,lName,age,dateOfBirth,afm,address);
+        Citizen citizen = new Citizen(idNumber, fName, lName, age, dateOfBirth, afm, address);
 
+        //adding the Citizen, if id number exist return a message
         boolean result = registry.addCitizen(citizen);
-        if (result){
+        if (result) {
             System.out.println(citizen + " added successfully!");
-        }
-        else
-            System.out.println("Probably " +citizen +" already in Registry.");
+        } else
+            System.out.println("Probably " + citizen + " already in Registry.");
 
     }
+
+
 
 
 }
