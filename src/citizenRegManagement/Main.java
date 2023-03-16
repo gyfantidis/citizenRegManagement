@@ -4,6 +4,7 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import static citizenRegManagement.Menu.addNewCitizen;
+import static citizenRegManagement.Menu.delCitizen;
 
 public class Main {
     public static void main(String[] args) {
@@ -17,7 +18,7 @@ public class Main {
         Scanner input = new Scanner(System.in);
         do {
             System.out.println("Add new Citizen into the Registry");
-            System.out.println("Choice 2");
+            System.out.println("Delete Citizen from the Registry");
             System.out.println("Choice 3");
             System.out.println("choice 4");
             try {
@@ -28,11 +29,12 @@ public class Main {
             System.out.println();
             switch (choice) {
                 case 1:
-                    System.out.println("Add a Citizen into the Registry");
+                    System.out.println("Add new Citizen");
                     addNewCitizen(input,registry);
                     break;
                 case 2:
-                    System.out.println("epelekses 2");
+                    System.out.println("Delete Citizen");
+                    delCitizen(input,registry);
                     break;
                 case 3:
                     System.out.println("epelekses 3");
