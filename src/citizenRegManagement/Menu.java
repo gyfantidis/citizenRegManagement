@@ -48,21 +48,42 @@ public class Menu {
     public static void updateCitizen(Scanner input, Registry registry) {
         System.out.println("Give me Citizens id Number :");
         String idNumber = input.next();
-        System.out.println("1) update the AFM ");
-        System.out.println("2) update the Address ");
+
         System.out.println();
         int choice = 0;
-        Scanner input2 = new Scanner(System.in);
+        String update;
+
+        Scanner inputChoice = new Scanner(System.in);
+        Scanner inputUpdate = new Scanner(System.in);
         do {
+            System.out.println("1) Update the AFM ");
+            System.out.println("2) Update the Address ");
+            System.out.println("3) Escape!");
             try {
-                choice = input2.nextInt();
+                choice = inputChoice.nextInt();
             } catch (InputMismatchException e) {
                 System.out.println("Did not give an integer!");
+                break;
             }
-        }while (choice == 0);
+            if (choice == 1) {
+                System.out.println("Give the new AFM :");
+                update = inputUpdate.next();
+                registry.updateCit(idNumber, 1, update);
+            } else if (choice == 2) {
+                System.out.println("Give the new Address : ");
+                update = inputUpdate.next();
+                registry.updateCit(idNumber, 2, update);
+            }
+            System.out.println();
+
+        } while (choice != 3);
 
         input.close();
 
+    }
+
+    public static void printRegistry(Registry registry) {
+        registry.toString();
     }
 
 

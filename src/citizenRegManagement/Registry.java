@@ -12,9 +12,6 @@ public class Registry {
     }
 
 
-
-
-
     //checking if the citizen exist in the Registry and add it
     public boolean addCitizen(Citizen cz) {
         for (Citizen citizen : citizens) {
@@ -34,8 +31,27 @@ public class Registry {
         return false;
     }
 
+    //update citizens AFM or Address
+    public boolean updateCit(String idNumber, int choice, String updateData){
+        for (Citizen citizen : citizens)
+            if (citizen.getAt().equals(idNumber)) {
+               if (choice==1){
+                   citizen.setAfm(updateData);
+               }
+               else if (choice ==2){
+                    citizen.setAddress(updateData);
+               }
+               return true;
+            }
+        return false;
+    }
 
-
+    @Override
+    public String  toString() {
+        return "Registry{" +
+                "citizens=" + citizens +
+                '}';
+    }
 }
 
 
