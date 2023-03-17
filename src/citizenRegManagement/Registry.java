@@ -46,6 +46,16 @@ public class Registry {
         return false;
     }
 
+    //print Registry
+    public void printRegistry(){
+         for (Citizen citizen: citizens){
+             System.out.println(citizen.toString());
+         }
+
+    }
+
+
+
     @Override
     public String  toString() {
         return "Registry{" +

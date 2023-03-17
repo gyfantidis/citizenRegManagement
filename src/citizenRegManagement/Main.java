@@ -51,7 +51,7 @@ public class Main {
                     break;
                 case 5:
                     System.out.println("Printing : ");
-                    registry.toString();
+                    registry.printRegistry();
                     break;
             }
 
