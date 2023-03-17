@@ -25,27 +25,24 @@ public class Menu {
         Citizen citizen = new Citizen(idNumber, fName, lName, age, dateOfBirth, afm, address);
 
         //adding the Citizen, if id number exist return a message
-        boolean result = registry.findCitizen(citizen);
-        if (!result) {
+        boolean result = registry.addCitizen(citizen);
+        if (result) {
             System.out.println(citizen + " added successfully!");
-            registry.addCitizen(citizen);
         } else
-            System.out.println("Probably " + citizen + " already in Registry.");
+            System.out.println("Probably citizens ID number : " + citizen.getAt() + " already in Registry.");
 
     }
 
     static  void delCitizen(Scanner input, Registry registry) {
         System.out.println("Citizens ID Number : ");
         String idNumber = input.next();
-
-
         //delete the citizen, if id number not exist return a message
-        boolean result = registry.findCitizensID(idNumber){
+        boolean result = registry.deleteCitizen(idNumber);
             if(result){
                 System.out.println("deleted successfully!");
-                registry.findCitizenFromIDNumber(idNumber);
-            }
-        }
+            }else
+                System.out.println("There is no citizen with ID Number : " +idNumber + ", in Registry.");
+
 
     }
 
