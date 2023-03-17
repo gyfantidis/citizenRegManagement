@@ -1,12 +1,13 @@
 
 package citizenRegManagement;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Menu {
 
     //method adding new citizen into the registry
-    static void addNewCitizen(Scanner input, Registry registry) {
+    public static void addNewCitizen(Scanner input, Registry registry) {
         System.out.println("ID number : ");
         String idNumber = input.next();
         System.out.println("First Name : ");
@@ -33,20 +34,36 @@ public class Menu {
 
     }
 
-    static  void delCitizen(Scanner input, Registry registry) {
+    public static void delCitizen(Scanner input, Registry registry) {
         System.out.println("Citizens ID Number : ");
         String idNumber = input.next();
         //delete the citizen, if id number not exist return a message
         boolean result = registry.deleteCitizen(idNumber);
-            if(result){
-                System.out.println("deleted successfully!");
-            }else
-                System.out.println("There is no citizen with ID Number : " +idNumber + ", in Registry.");
-
-
+        if (result) {
+            System.out.println("deleted successfully!");
+        } else
+            System.out.println("There is no citizen with ID Number : " + idNumber + ", in Registry.");
     }
 
+    public static void updateCitizen(Scanner input, Registry registry) {
+        System.out.println("Give me Citizens id Number :");
+        String idNumber = input.next();
+        System.out.println("1) update the AFM ");
+        System.out.println("2) update the Address ");
+        System.out.println();
+        int choice = 0;
+        Scanner input2 = new Scanner(System.in);
+        do {
+            try {
+                choice = input2.nextInt();
+            } catch (InputMismatchException e) {
+                System.out.println("Did not give an integer!");
+            }
+        }while (choice == 0);
 
+        input.close();
+
+    }
 
 
 }
