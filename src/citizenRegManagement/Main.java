@@ -29,8 +29,8 @@ public class Main {
             System.out.println("1) Add new Citizen into the Registry");
             System.out.println("2) Delete Citizen from the Registry");
             System.out.println("3) Update Citizens AFM or Address");
-            System.out.println("choice 4");
-            System.out.println("5 Print the Registry");
+            System.out.println("4) Search Citizen into the Registry");
+            System.out.println("5) Print the Registry");
             System.out.println("6) to Exit!!!");
             try {
                 choice = input.nextInt();
@@ -41,22 +41,22 @@ public class Main {
             System.out.println();
             switch (choice) {
                 case 1:
-                    System.out.println("Adding new Citizen : ");
+                    System.out.println("Adding... : ");
                     addNewCitizen(input, registry);
                     break;
                 case 2:
-                    System.out.println("Deleting Citizen : ");
+                    System.out.println("Deleting... : ");
                     delCitizen(input, registry);
                     break;
                 case 3:
-                    System.out.println("Updating : ");
+                    System.out.println("Updating... : ");
                     updateCitizen(input, registry);
                     break;
                 case 4:
-                    System.out.println("epelekses 4");
+                    System.out.println("Searching... :");
                     break;
                 case 5:
-                    System.out.println("Printing : ");
+                    System.out.println("Printing... : ");
                     registry.printRegistry();
                     break;
             }

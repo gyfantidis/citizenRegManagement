@@ -38,9 +38,11 @@ public class Registry implements java.io.Serializable{
             if (citizen.getAt().equals(idNumber)) {
                if (choice==1){
                    citizen.setAfm(updateData);
+                   System.out.println("AFM Updated!");
                }
                else if (choice ==2){
                     citizen.setAddress(updateData);
+                   System.out.println("Address Updated!");
                }
                return true;
             }
