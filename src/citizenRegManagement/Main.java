@@ -4,13 +4,20 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import static citizenRegManagement.Menu.*;
+import static citizenRegManagement.readAndWriteFile.*;
 
 
 public class Main {
     public static void main(String[] args) {
 
-        //Creation the Citizens Registry
-        Registry registry = new Registry("Citizens Registry");
+        //Checking if library state exists so as to be loaded
+        String filename="CitizensRegistry2.dat";
+        Registry registry = readRegistryFromFile(filename);
+        if (registry == null){
+            registry = new Registry("Citizens Registry");
+        }
+
+
 
         //Start the menu
 
@@ -18,7 +25,7 @@ public class Main {
         int choice = 0;
         Scanner input = new Scanner(System.in);
         do {
-            System.out.println("MENU for Registry Management");
+            System.out.println("\n----MENU for Registry Management----");
             System.out.println();
             System.out.println("1) Add new Citizen into the Registry");
             System.out.println("2) Delete Citizen from the Registry");
@@ -54,7 +61,9 @@ public class Main {
                     registry.printRegistry();
                     break;
             }
-
+            if(choice==6){
+                writeRegistryToFile(registry,filename);
+            }
         } while (choice != 6);
 
         input.close();

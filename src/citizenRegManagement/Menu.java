@@ -1,6 +1,10 @@
 
 package citizenRegManagement;
 
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -79,6 +83,33 @@ public class Menu {
 
 
     }
+
+
+    public static void writeRegistryToFile(Registry r, String filename) {
+        ObjectOutputStream oos = null;
+
+        try {
+            oos = new ObjectOutputStream(new FileOutputStream(filename));
+        } catch (Exception e) {
+            System.out.println("Something went wrong while opening file for writing");
+            System.out.println("Cause : " + e.getMessage());
+            System.out.println("Exiting!!!");
+            System.exit(-1);
+        }
+
+        try {
+            oos.writeObject(r);
+            oos.close();
+        } catch (Exception e) {
+            System.out.println("Something went wrong while attempting to write the state");
+            System.out.println("Cause : " + e.getMessage());
+            System.out.println("Exiting!!!");
+            System.exit(-1);
+        }
+    }
+
+
+
 
 
 }
