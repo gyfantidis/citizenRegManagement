@@ -1,19 +1,22 @@
 package citizenRegManagement;
 
-public class Citizen {
+import java.io.Serializable;
+
+public class Citizen implements Serializable {
+    private static final long serialVersionUID= 1L;
     private String at;
     private String firstName;
     private String lastName;
-    private String age;
+    private String sex;
     private String born;
     private String afm;
     private String address;
 
-    public Citizen(String at, String firstName, String lastName, String age, String born, String afm, String address) {
+    public Citizen(String at, String firstName, String lastName, String sex, String born, String afm, String address) {
         this.at = at;
         this.firstName = firstName;
         this.lastName = lastName;
-        this.age = age;
+        this.sex = sex;
         this.born = born;
         this.afm = afm;
         this.address = address;
@@ -26,7 +29,7 @@ public class Citizen {
                 "at='" + at + '\'' +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
-                ", age='" + age + '\'' +
+                ", sex='" + sex + '\'' +
                 ", born='" + born + '\'' +
                 ", afm='" + afm + '\'' +
                 ", address='" + address + '\'' +
@@ -59,12 +62,12 @@ public class Citizen {
         this.lastName = lastName;
     }
 
-    public String getAge() {
-        return age;
+    public String getsex() {
+        return sex;
     }
 
-    public void setAge(String age) {
-        this.age = age;
+    public void setsex(String sex) {
+        this.sex = sex;
     }
 
     public String getBorn() {

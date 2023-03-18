@@ -11,7 +11,7 @@ public class Main {
     public static void main(String[] args) {
 
         //Checking if library state exists so as to be loaded
-        String filename="CitizensRegistry2.dat";
+        String filename="CitizensRegistry41.dat";
         Registry registry = readRegistryFromFile(filename);
         if (registry == null){
             registry = new Registry("Citizens Registry");
@@ -19,8 +19,7 @@ public class Main {
 
 
 
-        //Start the menu
-
+        //Menu
 
         int choice = 0;
         Scanner input = new Scanner(System.in);
@@ -32,7 +31,7 @@ public class Main {
             System.out.println("3) Update Citizens AFM or Address");
             System.out.println("choice 4");
             System.out.println("5 Print the Registry");
-            System.out.println("6) to Exited!!!");
+            System.out.println("6) to Exit!!!");
             try {
                 choice = input.nextInt();
             } catch (InputMismatchException e) {

@@ -2,8 +2,8 @@ package citizenRegManagement;
 
 import java.io.*;
 
-public class readAndWriteFile implements Serializable{
-    private static final long serialVersionUID = 1L;
+public class readAndWriteFile {
+
 
 
     public static void writeRegistryToFile(Registry r, String filename) {

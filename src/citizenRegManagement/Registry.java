@@ -3,7 +3,8 @@ package citizenRegManagement;
 import java.util.HashSet;
 import java.util.Set;
 
-public class Registry {
+public class Registry implements java.io.Serializable{
+    private static final long serialVersionUID = 1L;
     private String name;
     private  Set<Citizen> citizens = new HashSet<Citizen>();
 

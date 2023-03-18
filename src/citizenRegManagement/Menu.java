@@ -1,10 +1,7 @@
 
 package citizenRegManagement;
 
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
+
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -12,22 +9,52 @@ public class Menu {
 
     //method adding new citizen into the registry
     public static void addNewCitizen(Scanner input, Registry registry) {
+        //id Number
         System.out.println("ID number : ");
         String idNumber = input.next();
+        while (idNumber.length() != 8) {
+            System.out.println("ID number must be exactly 8 characters long. Please enter a valid ID number: ");
+            idNumber = input.next();
+        }
+
+        //First Name
         System.out.println("First Name : ");
         String fName = input.next();
+
+        //Last Name
         System.out.println("Last Name : ");
         String lName = input.next();
-        System.out.println("Age : ");
-        String age = input.next();
-        System.out.println("Date of Birth : ");
-        String dateOfBirth = input.next();
-        System.out.println("AFM : ");
-        String afm = input.next();
-        System.out.println("Address : ");
-        String address = input.next();
 
-        Citizen citizen = new Citizen(idNumber, fName, lName, age, dateOfBirth, afm, address);
+        //Sex
+
+        String sex = null;
+        do {
+            System.out.println("Sex (press m for male/ f for female): ");
+            sex = input.next();
+        } while (!sex.equalsIgnoreCase("m") && !sex.equalsIgnoreCase("f"));
+
+        //Date of Birth
+        String dateOfBirth;
+        do {
+            System.out.println("Date of Birth (in the format of DD-MM-YYYY): ");
+            dateOfBirth = input.next();
+        } while (!dateOfBirth.matches("^(0?[1-9]|[12][0-9]|3[01])-(0?[1-9]|1[0-2])-\\d{4}$"));
+
+        //AFM
+        System.out.println("AFM (optional 0 for null): ");
+        String afm = input.next();
+        if (afm.equals("0")) {
+            afm = null; // Set AFM to null if the user did not provide input
+        }
+
+        //Address
+        System.out.println("Address (optional 0 for null): ");
+        String address = input.next();
+        if (address.equals("0")) {
+            address = null; // Set Address to null if the user did not provide input
+        }
+
+        Citizen citizen = new Citizen(idNumber, fName, lName, sex, dateOfBirth, afm, address);
 
         //adding the Citizen, if id number exist return a message
         boolean result = registry.addCitizen(citizen);
@@ -83,33 +110,6 @@ public class Menu {
 
 
     }
-
-
-    public static void writeRegistryToFile(Registry r, String filename) {
-        ObjectOutputStream oos = null;
-
-        try {
-            oos = new ObjectOutputStream(new FileOutputStream(filename));
-        } catch (Exception e) {
-            System.out.println("Something went wrong while opening file for writing");
-            System.out.println("Cause : " + e.getMessage());
-            System.out.println("Exiting!!!");
-            System.exit(-1);
-        }
-
-        try {
-            oos.writeObject(r);
-            oos.close();
-        } catch (Exception e) {
-            System.out.println("Something went wrong while attempting to write the state");
-            System.out.println("Cause : " + e.getMessage());
-            System.out.println("Exiting!!!");
-            System.exit(-1);
-        }
-    }
-
-
-
 
 
 }
