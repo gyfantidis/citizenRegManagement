@@ -5,7 +5,7 @@ import java.io.*;
 public class readAndWriteFile {
 
 
-
+    //Write to the file
     public static void writeRegistryToFile(Registry r, String filename) {
         ObjectOutputStream oos = null;
 
@@ -29,7 +29,7 @@ public class readAndWriteFile {
         }
     }
 
-
+    //read from the file
     public static Registry readRegistryFromFile(String filename) {
         ObjectInputStream ois = null;
 

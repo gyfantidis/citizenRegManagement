@@ -26,7 +26,6 @@ public class Menu {
         String lName = input.next();
 
         //Sex
-
         String sex = null;
         do {
             System.out.println("Sex (press m for male/ f for female): ");
@@ -54,9 +53,10 @@ public class Menu {
             address = null; // Set Address to null if the user did not provide input
         }
 
+        //make the object citizen
         Citizen citizen = new Citizen(idNumber, fName, lName, sex, dateOfBirth, afm, address);
 
-        //adding the Citizen, if id number exist return a message
+        //adding Citizen, if id number exist return a message
         boolean result = registry.addCitizen(citizen);
         if (result) {
             System.out.println(citizen + " added successfully!");
@@ -65,6 +65,7 @@ public class Menu {
 
     }
 
+    //deleting Citizen, if id number not exist return a message
     public static void delCitizen(Scanner input, Registry registry) {
         System.out.println("Citizens ID Number : ");
         String idNumber = input.next();
@@ -76,6 +77,7 @@ public class Menu {
             System.out.println("There is no citizen with ID Number : " + idNumber + ", in Registry.");
     }
 
+    //updating the Citizen, if id number exist return a message
     public static void updateCitizen(Scanner input, Registry registry) {
         System.out.println("Give me Citizens id Number :");
         String idNumber = input.next();
@@ -111,5 +113,15 @@ public class Menu {
 
     }
 
-
+    //search for Citizen, only with ID Number
+    public static void searchCitizen(Scanner input, Registry registry) {
+        System.out.println("Citizens ID Number : ");
+        String idNumber = input.next();
+        //search the citizen, if id number not exist return a message
+        boolean result = registry.searchCit(idNumber);
+        if (result) {
+            System.out.println("");
+        } else
+            System.out.println("There is no citizen with ID Number : " + idNumber + ", in Registry.");
+    }
 }

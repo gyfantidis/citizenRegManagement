@@ -3,7 +3,7 @@ package citizenRegManagement;
 import java.io.Serializable;
 
 public class Citizen implements Serializable {
-    private static final long serialVersionUID= 1L;
+    private static final long serialVersionUID = 1L;
     private String at;
     private String firstName;
     private String lastName;
@@ -12,6 +12,7 @@ public class Citizen implements Serializable {
     private String afm;
     private String address;
 
+    //constructor
     public Citizen(String at, String firstName, String lastName, String sex, String born, String afm, String address) {
         this.at = at;
         this.firstName = firstName;
@@ -22,7 +23,7 @@ public class Citizen implements Serializable {
         this.address = address;
     }
 
-
+    //toString
     @Override
     public String toString() {
         return "Citizen{" +
@@ -35,6 +36,7 @@ public class Citizen implements Serializable {
                 ", address='" + address + '\'' +
                 '}';
     }
+
 
     //getters and setters
 
